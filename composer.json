@@ -8,7 +8,16 @@
             "email": "shangzongkang@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=7.2",
+        "illuminate/support": "^5.5|^6|^7",
+        "illuminate/console": "^5.5|^6|^7",
+        "illuminate/filesystem": "^5.5|^6|^7"
+    },
+    "require-dev": {
+        "illuminate/config": "^5.5|^6|^7",
+        "illuminate/view": "^5.5|^6|^7"
+    },
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
