@@ -1,0 +1,22 @@
+{
+    "name": "dszkng/lumen-log-viewer",
+    "description": "lumen log viewer",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dszkng",
+            "email": "shangzongkang@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Dszkng\\LumenLogViewer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dszkng\\LumenLogViewer\\Tests\\": "tests/"
+        }
+    }
+}
