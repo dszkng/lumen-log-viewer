@@ -10,4 +10,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('log')->group(function () {
     Route::get('index', 'LogViewerController@index');
+    Route::get('getList', 'LogViewerController@getList');
 });
