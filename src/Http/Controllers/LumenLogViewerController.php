@@ -12,7 +12,7 @@ use Dszkng\LumenLogViewer\LogViewer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 
-class LogViewerController extends \Laravel\Lumen\Routing\Controller
+class LumenLogViewerController extends \Laravel\Lumen\Routing\Controller
 {
     /**
      * @var \Illuminate\Http\Request
@@ -27,7 +27,7 @@ class LogViewerController extends \Laravel\Lumen\Routing\Controller
     /**
      * @var string
      */
-//    protected $view_log = 'laravel-log-viewer::log';
+//    protected $view_log = 'lumen-log-viewer::log';
     protected $view_log = 'log';
 
     /**
@@ -43,7 +43,7 @@ class LogViewerController extends \Laravel\Lumen\Routing\Controller
     {
         $files = $this->log_viewer->getFiles(true);
 
-        return view('log2', compact('files'));
+        return view('lumen-log-viewer::index', compact('files'));
     }
 
     public function getList(Request $request)

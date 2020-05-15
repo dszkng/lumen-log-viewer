@@ -9,6 +9,7 @@
 namespace Dszkng\LumenLogViewer;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class LumenLogViewerServiceProvider extends ServiceProvider
 {
@@ -26,18 +27,18 @@ class LumenLogViewerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $configPath = __DIR__ . '/../config/log-viewer.php';
+        $configPath = __DIR__ . '/../config/lumen-log-viewer.php';
 
         if (function_exists('config_path')) {
-            $publishPath = config_path('log-viewer.php');
+            $publishPath = config_path('lumen-log-viewer.php');
         } else {
-            $publishPath = base_path('config/log-viewer.php');
+            $publishPath = base_path('config/lumen-log-viewer.php');
         }
 
         $this->publishes([$configPath => $publishPath], 'config');
 
         Route::group([
-//            'prefix' => config('log-viewer.path'),
+            'prefix' => config('lumen-log-viewer.path'),
             'namespace' => 'Dszkng\LumenLogViewer\Http\Controllers',
 //            'middleware' => 'web',
         ], function () {
@@ -46,7 +47,7 @@ class LumenLogViewerServiceProvider extends ServiceProvider
 
         if ($this->app->has('view')) {
             $viewPath = __DIR__ . '/../resources/views';
-            $this->loadViewsFrom($viewPath, 'log-viewer');
+            $this->loadViewsFrom($viewPath, 'lumen-log-viewer');
         }
     }
 
@@ -57,7 +58,7 @@ class LumenLogViewerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $configPath = __DIR__ . '/../config/log-viewer.php';
-        $this->mergeConfigFrom($configPath, 'log-viewer');
+        $configPath = __DIR__ . '/../config/lumen-log-viewer.php';
+        $this->mergeConfigFrom($configPath, 'lumen-log-viewer');
     }
 }
