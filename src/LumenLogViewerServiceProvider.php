@@ -6,12 +6,12 @@
  * Time: 21:19
  */
 
-namespace Dszkng\LumenLogViewer;
+namespace Youke\BaseSettings;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\ServiceProvider as BaseProvider;
 
-class LumenLogViewerServiceProvider extends ServiceProvider
+class LumenLogViewerServiceProvider extends BaseProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
@@ -27,19 +27,19 @@ class LumenLogViewerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $configPath = __DIR__ . '/../config/lumen-log-viewer.php';
+        $configPath = __DIR__ . '/../config/base-settings.php';
 
         if (function_exists('config_path')) {
-            $publishPath = config_path('lumen-log-viewer.php');
+            $publishPath = config_path('base-settings.php');
         } else {
-            $publishPath = base_path('config/lumen-log-viewer.php');
+            $publishPath = base_path('config/base-settings.php');
         }
 
         $this->publishes([$configPath => $publishPath], 'config');
 
         Route::group([
-            'prefix' => config('lumen-log-viewer.path'),
-            'namespace' => 'Dszkng\LumenLogViewer\Http\Controllers',
+            'prefix' => config('base-settings.path'),
+            'namespace' => 'Youke\BaseSettings\Http\Controllers',
 //            'middleware' => 'web',
         ], function () {
             $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
@@ -58,7 +58,7 @@ class LumenLogViewerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $configPath = __DIR__ . '/../config/lumen-log-viewer.php';
+        $configPath = __DIR__ . '/../config/base-settings.php';
         $this->mergeConfigFrom($configPath, 'lumen-log-viewer');
     }
 }

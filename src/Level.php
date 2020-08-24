@@ -6,7 +6,7 @@
  * Time: 18:03
  */
 
-namespace Dszkng\LumenLogViewer;
+namespace Youke\BaseSettings;
 
 
 class Level

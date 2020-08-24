@@ -6,13 +6,13 @@
  * Time: 21:36
  */
 
-namespace Dszkng\LumenLogViewer\Http\Controllers;
+namespace Youke\BaseSettings\Http\Controllers;
 
-use Dszkng\LumenLogViewer\LogViewer;
+use Youke\BaseSettings\LogViewer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 
-class LumenLogViewerController extends \Laravel\Lumen\Routing\Controller
+class LogViewerController extends \Laravel\Lumen\Routing\Controller
 {
     /**
      * @var \Illuminate\Http\Request
@@ -43,7 +43,7 @@ class LumenLogViewerController extends \Laravel\Lumen\Routing\Controller
     {
         $files = $this->log_viewer->getFiles(true);
 
-        return view('lumen-log-viewer::index', compact('files'));
+        return view('log-viewer::index', compact('files'));
     }
 
     public function getList(Request $request)
