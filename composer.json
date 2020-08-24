@@ -1,33 +1,39 @@
 {
-    "name": "dszkng/lumen-log-viewer",
-    "description": "lumen log viewer",
+    "name": "youke/base-settings",
+    "description": "Settings for start project.",
     "license": "MIT",
     "authors": [
         {
-            "name": "dszkng",
+            "name": "shangzongkang",
             "email": "shangzongkang@gmail.com"
         }
     ],
     "require": {
-        "php": "^7.1.3"
+        "php": "^7.1.3",
+        "itfarm/php-sdk": "^0.4.10",
+        "zircote/swagger-php": "~2.0|3.*",
+        "swagger-api/swagger-ui": "^3.0"
     },
     "require-dev": {
     },
     "minimum-stability": "dev",
     "autoload": {
+        "files": [
+          "src/helpers.php"
+        ],
         "psr-4": {
-            "Dszkng\\LumenLogViewer\\": "src/"
+            "Youke\\BaseSettings\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Dszkng\\LumenLogViewer\\Tests\\": "tests/"
+            "Youke\\BaseSettings\\Tests\\": "tests/"
         }
     },
     "repositories": [
         {
             "type": "composer",
-            "url": "https://github.oneitfarm.com"
+            "url": "https://packagist.oneitfarm.com"
         }
     ]
 }
